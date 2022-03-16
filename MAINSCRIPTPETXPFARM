@@ -5,14 +5,30 @@ local NotificationBindable = Instance.new("BindableFunction")
 NotificationBindable.OnInvoke = callback
 --
 game.StarterGui:SetCore("SendNotification",  {
- Title = "AdoptMe XP";
- Text = "Created by 1okJizz";
+ Title = "30 FOV";
+ Text = "Adopt Me Lock";
  Icon = "";
  Duration = 9999999999;
  Button1 = "LEVEL";
  Button2 = "XP";
  Callback = NotificationBindable;
 })
+
+-- // Toggle
+local hotkey = ";" -- toggle key
+local mouse = game.Players.LocalPlayer:GetMouse()
+
+
+
+mouse.KeyDown:Connect(function(key)
+if key == hotkey then
+if getgenv().ValiantAimHacks.SilentAimEnabled == true then
+ getgenv().ValiantAimHacks.SilentAimEnabled = false
+else
+getgenv().ValiantAimHacks.SilentAimEnabled = true
+end
+end
+end)
 
 -- // Services
 local Players = game:GetService("Players")
